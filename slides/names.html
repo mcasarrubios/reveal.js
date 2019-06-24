@@ -1,0 +1,121 @@
+<section>
+
+    Usa nombres que se puedan buscar
+    <img src="./assets/images/github-search.jpg" />
+
+  </section>
+
+  <section>
+    <section data-markdown>
+      <script type="text/template">
+        Índices i, j, k solo para bucles cuyo contexto sea muy acotado
+
+        <br>
+
+        ```
+          for (var i = 0; i < 9; i++) {
+            ...
+          }
+        ```
+        <div class="fragment">
+
+          ```
+            const filteredPokemons =
+              pokemons.filter(item => item.id === id);
+          ```
+        </div>
+
+      </script>
+    </section>
+
+    <section data-markdown>
+      <script type="text/template">
+        ```
+          const renderedPokemons = pokemons.map(item => {
+            const {id, name} = item;
+
+            const images = item.imaged.map(item => {
+              return cropImage(item);
+            })
+
+            return {id, name, images, ...aLotOfMoreThings}
+
+          });
+        ```
+
+        <div class="fragment">
+
+          ```
+          const renderedPokemons = pokemons.map(pokemon => {
+            const {id, name} = pokemon;
+
+            const images = pokemon.imaged.map(image => {
+              return cropImage(image);
+            })
+
+            return {id, name, images, ...aLotOfMoreThings}
+
+          });
+        ```
+        </div>
+      </script>
+    </section>
+
+    <section>
+        <section data-markdown>
+          <script type="text/template">
+            Índices i, j, k solo para bucles cuyo contexto sea muy acotado
+
+            <br>
+
+            ```
+              for (var i = 0; i < 9; i++) {
+                ...
+              }
+            ```
+            <div class="fragment">
+
+              ```
+                const filteredPokemons =
+                  pokemons.filter(item => item.id === id);
+              ```
+            </div>
+
+          </script>
+        </section>
+
+        <section data-markdown>
+          <script type="text/template">
+            ```
+              const renderedPokemons = pokemons.map(item => {
+                const {id, name} = item;
+
+                const images = item.imaged.map(item => {
+                  return cropImage(item);
+                })
+
+                return {id, name, images, ...aLotOfMoreThings}
+
+              });
+            ```
+
+            <div class="fragment">
+
+              ```
+              const renderedPokemons = pokemons.map(pokemon => {
+                const {id, name} = pokemon;
+
+                const images = pokemon.imaged.map(image => {
+                  return cropImage(image);
+                })
+
+                return {id, name, images, ...aLotOfMoreThings}
+
+              });
+            ```
+            </div>
+          </script>
+        </section>
+      </section>
+
+  </section>

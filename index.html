@@ -1,31 +1,33 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="css/reset.css">
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+  <title>reveal.js</title>
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/monokai.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/theme/black.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Cover</section>
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="lib/css/monokai.css">
+
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+  </script>
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <!-- <section>Cover</section>
 				<section>Why this name</section>
 				<section>Who am I</section>
 				<section>Why this talk</section>
@@ -33,6 +35,7 @@
 					<div>
 						<h4>Índice</h4>
 						<ul>
+              <li>La regla del boy scout</li>
 							<li>Nomenclatura</li>
 							<li>Comentarios</li>
 							<li>Funciones</li>
@@ -49,42 +52,86 @@
 							<li>Craftmanship</li>
 						</ul>
 					</div>
-				</section>
-				<section data-markdown>
-					<script type="text/template">
-						## Markdown support
+        </section>
+        <section data-markdown>
+          <script type="text/template">
+          ## Nombres con sentido
 
-						Write content using inline or external Markdown.
-						Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
+          Todos los nombres deben ser intencionados y descriptivos
+          <br><br>
+          ```
+            let d; // dias transcurridos
 
-						```
-						<section data-markdown>
-						  ## Markdown support
+            let diasTranscurridos;
+          ```
+          </script>
+        </section> -->
+      <!-- <section  data-markdown>
+          <script type="text/template">
+          Evita abreviaciones, prefijos, usar secuencias de números en variables y las palabras redundantes.
+          (the-, a-, -object, -info, -data).
 
-						  Write content using inline or external Markdown.
-						  Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-						</section>
-						```
-					</script>
-				</section>
-			</div>
-		</div>
+          <div class="fragment">
+            <br>
 
-		<script src="js/reveal.js"></script>
+            ```
+              let theProduct;
+              let productData;
+              let pokeInfo
+              let printManager;
 
-		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
-			Reveal.initialize({
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true },
-					{ src: 'plugin/zoom-js/zoom.js', async: true },
-				]
-			});
-		</script>
-	</body>
+              // vs
+
+              let product;
+              let pokemon;
+              let printer;
+            ```
+          </div>
+          </script>
+        </section> -->
+
+        <section>Slide 1</section>
+
+        <section data-external="slides/names.html"> </section>
+
+    </div>
+  </div>
+
+  <script src="js/reveal.js"></script>
+
+  <script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+      dependencies: [{
+          src: 'plugin/markdown/marked.js'
+        },
+        {
+          src: 'plugin/markdown/markdown.js'
+        },
+        {
+          src: 'plugin/notes/notes.js',
+          async: true
+        },
+        {
+          src: 'plugin/highlight/highlight.js',
+          async: true
+        },
+        {
+          src: 'plugin/zoom-js/zoom.js',
+          async: true
+        },
+        {
+          src: 'plugin/external/external.js',
+          condition: function() {
+            return !!document.querySelector( '[data-external],[data-external-replace]'
+          );
+        }
+},
+      ]
+    });
+  </script>
+</body>
+
 </html>
