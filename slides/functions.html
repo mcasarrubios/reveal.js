@@ -1,0 +1,67 @@
+<!-- <section>
+  <h2> - Funciones - </h2>
+</section>
+
+<section>
+  <ul>
+    <li>Primera regla: Tienen que ser muy pequeñas</li>
+    <li class="fragment"> Segunda regla: Deben ser aún más pequeñas</li>
+    <li class="fragment"> Tercera regla: Todavía es muy grande</li>
+  </ul>
+</section>
+
+<section data-markdown>
+  <script type="text/template">
+    Una función sólo debe hacer una cosa (principio de única responsabilidad)
+  </script>
+</section>
+
+<section data-markdown>
+  <script type="text/template">
+    Cuando refactorizar una función
+    * Por reutilizar código
+    * Porque tiene un significado claro
+  </script>
+</section> -->
+
+<section data-markdown>
+  <script type="text/template">
+    Todo el contenido de una función debería estar al mismo nivel de abstracción.
+    <br><br>
+    Por ejemplo, no debe hacer invocaciones a funciones de alto nivel y cosas técnicas a la vez.
+    <br><br>
+    ```javascript
+     function main() {
+      const documento = generaDocumento();
+      documento.append('Doc. generado automaticamente.')
+     }
+     // vs
+     function main() {
+      const documento = generaDocumento();
+      const docFirmado = generarFirma(documento);
+      enviarDocumento(docFirmado);
+     }
+    ```
+  </script>
+</section>
+
+<section data-markdown>
+  <script type="text/template">
+    ## Switch
+
+    Tiene suficiente entidad como para sacarla a una función.
+
+    ```
+    function calculaPaga(empleado) {
+     switch(empleado.type) {
+      case COMISIONISTA:
+       return calculaComisiones(empleado);
+      case ASALARIADO:
+       return calculaSalario(empleado);
+      default:
+       return calculaPagoPorHoras(empleado);
+     }
+    }
+    ```
+  </script>
+</section>

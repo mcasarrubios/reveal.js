@@ -1,121 +1,159 @@
 <section>
+  <h2> - Nomenclatura - </h2>
+</section>
 
-    Usa nombres que se puedan buscar
-    <img src="./assets/images/github-search.jpg" />
+<section data-markdown>
+  <script type="text/template">
+    ## Nombres con sentido
+    <br>
+    Todos los nombres deben ser intencionados y descriptivos
 
-  </section>
+    ```javascript
+      let d; // dias transcurridos
+      //vs
+      let diasTranscurridos;
+    ```
 
-  <section>
-    <section data-markdown>
-      <script type="text/template">
-        Índices i, j, k solo para bucles cuyo contexto sea muy acotado
+    <div class="fragment">
+    <br>
+    Pronunciables
 
-        <br>
+    ```javascript
+      function copiarObjeto(o1, o2) {...};
+      //vs
+      function copiarObjeto(origen, destino) {...};
+    ```
+    </div>
+  </script>
+</section>
+<section data-markdown>
+  <script type="text/template">
+    Evita abreviaciones, prefijos, usar secuencias de números en variables y las palabras redundantes.
+    (the-, a-, -object, -info, -data).
 
-        ```
-          for (var i = 0; i < 9; i++) {
-            ...
-          }
-        ```
-        <div class="fragment">
+    <div class="fragment">
 
-          ```
-            const filteredPokemons =
-              pokemons.filter(item => item.id === id);
-          ```
-        </div>
+      ```
+        let theProduct; let productData;
+        let pokeInfo;   let pokemon1;
+        let printManager;
+        // vs
+        let product;
+        let pokemon;
+        let printer;
+      ```
+    </div>
+    </script>
+</section>
 
-      </script>
-    </section>
+<section>
 
-    <section data-markdown>
-      <script type="text/template">
-        ```
-          const renderedPokemons = pokemons.map(item => {
-            const {id, name} = item;
+  Usa nombres que se puedan buscar
+  <img src="./assets/images/github-search.jpg" />
 
-            const images = item.imaged.map(item => {
-              return cropImage(item);
-            })
+</section>
 
-            return {id, name, images, ...aLotOfMoreThings}
+<section data-markdown>
+  <script type="text/template">
+    Índices i, j, k solo para bucles cuyo contexto sea muy acotado
 
-          });
-        ```
+    ```
+      for (var i = 0; i < 9; i++) {
+       ...
+      }
+    ```
+  </script>
+</section>
 
-        <div class="fragment">
+<section data-markdown>
+  <script type="text/template">
+    map, filter, find, reduce...
 
-          ```
-          const renderedPokemons = pokemons.map(pokemon => {
-            const {id, name} = pokemon;
+    ```
+      const filteredPokemons =
+       pokemons.filter(item => item.id === id);
+    ```
 
-            const images = pokemon.imaged.map(image => {
-              return cropImage(image);
-            })
+    <div class="fragment">
 
-            return {id, name, images, ...aLotOfMoreThings}
+    ```javascript
+    const renderedPokemons = pokemons.map(item => {
+      const {id, name} = item;
 
-          });
-        ```
-        </div>
-      </script>
-    </section>
+      const images = item.imaged.map(item => {
+       return cropImage(item);
+      })
 
-    <section>
-        <section data-markdown>
-          <script type="text/template">
-            Índices i, j, k solo para bucles cuyo contexto sea muy acotado
+      return {id, name, images}
+    });
+    ```
+    </div>
+    <div class="fragment">
 
-            <br>
+    ```javascript
+    const renderedPokemons = pokemons.map(pokemon => {
+      const {id, name} = pokemon;
 
-            ```
-              for (var i = 0; i < 9; i++) {
-                ...
-              }
-            ```
-            <div class="fragment">
+      const images = pokemon.images.map(image => {
+       return cropImage(image);
+      })
 
-              ```
-                const filteredPokemons =
-                  pokemons.filter(item => item.id === id);
-              ```
-            </div>
+      return {id, name, images}
+    });
+    ```
 
-          </script>
-        </section>
+    </div>
+  </script>
+</section>
 
-        <section data-markdown>
-          <script type="text/template">
-            ```
-              const renderedPokemons = pokemons.map(item => {
-                const {id, name} = item;
+<section data-markdown>
+  <script type="text/template">
+    ## Métodos/funciones
 
-                const images = item.imaged.map(item => {
-                  return cropImage(item);
-                })
+    * Utiliza verbos getPokemon(), isFavourite(), calculateAverage() )
 
-                return {id, name, images, ...aLotOfMoreThings}
+    * Intenta usar siempre las mismas palabras para lo mismo (¿fetchPokemon, retrieveProduct?)
 
-              });
-            ```
+    * Usa opuestos de forma precisa (Open/Close, Insert/Delete, Start/Stop)
 
-            <div class="fragment">
+    * No usar una misma palabra para cosas distintas (¿add es sum o insert?)
+  </script>
+</section>
 
-              ```
-              const renderedPokemons = pokemons.map(pokemon => {
-                const {id, name} = pokemon;
+<section data-markdown>
+  <script type="text/template">
+    Añade contexto a las variables
 
-                const images = pokemon.imaged.map(image => {
-                  return cropImage(image);
-                })
+    ```javascript
+      const street = 'Canal street 17';
+      const postalCode = '02003';
+      const city = 'Albacete';
+      const country = 'Spain';
 
-                return {id, name, images, ...aLotOfMoreThings}
+      // vs
 
-              });
-            ```
-            </div>
-          </script>
-        </section>
-      </section>
+      const address = {
+        street: 'Canal street 17',
+        postalCode: '02003',
+        city: 'Albacete',
+        country: 'Spain'
+      };
 
-  </section>
+    ```
+  </script>
+</section>
+
+<section data-markdown>
+  <script type="text/template">
+    Los nombres cuanto más cortos mejor, siempre que sean explícitos y claros.
+    <br><br>
+
+    * SimpleBeanFactoryAwareAspectInstanceFactory
+    * AbstractInterceptorDrivenBeanDefinitionDecorator
+    * AbstractInterruptibleBatchPreparedStatementSetter
+    * SimpleRemoteStatelessSessionProxyFactoryBean
+    * TransactionAwarePersistenceManagerFactoryProxy
+
+    ```
+  </script>
+</section>
