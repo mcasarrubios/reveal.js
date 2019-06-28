@@ -1,0 +1,58 @@
+<section>
+  <h2> - Formato - </h2>
+
+  <div class="fragment">
+    Team rules -> linter
+  </div>
+</section>
+
+<section>
+  <ul>
+    <li>El tamaño de los ficheros no debería superar las 200 líneas de media, con un límite máximo en 500.</li>
+    <br>
+    <li class="fragment"> En general, basta con escribir y encapsular todo en una función que se llame como lo que hay en el comentario.</li>
+  </ul>
+</section>
+
+<section data-markdown>
+    <script type="text/template">
+    Ejemplo
+
+    ```javascript
+      // Obtenemos la configuración del sistema
+      ...
+      // Iniciamos el sistema
+      ...
+      // Obtenemos la info del usuario
+      ...
+
+    ```
+
+    <div class="fragment">
+    vs
+
+    ```javascript
+      const config = getAppConfig();
+      ...
+      setup();
+      ...
+      const user = getUserDetails();
+    ```
+    </div>
+
+    </script>
+  </section>
+
+  <section data-markdown>
+    <script type="text/template">
+    ## Cuando son válidos
+
+    * Comentarios legales
+    * Comentarios informativos (por ejemplo, referenciando documentos normativos)
+    * Explicación de la intención, decisión tomada o advertencia
+    * Cuando utilizamos librerías de terceros, que no podemos modificar los nombres de funciones
+    * Comentarios TODO, aunque no deben ser excusa para dejar código incorrecto
+    * Comentarios en API públicas (Javadoc)
+
+    </script>
+  </section>

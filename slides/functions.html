@@ -1,4 +1,4 @@
-<!-- <section>
+<section>
   <h2> - Funciones - </h2>
 </section>
 
@@ -12,7 +12,9 @@
 
 <section data-markdown>
   <script type="text/template">
-    Una función sólo debe hacer una cosa (principio de única responsabilidad)
+    ## Principio de única responsabilidad
+
+    Una función sólo debe hacer una cosa
   </script>
 </section>
 
@@ -21,8 +23,19 @@
     Cuando refactorizar una función
     * Por reutilizar código
     * Porque tiene un significado claro
+
+    <br><br>
+    <div class="fragment">
+
+    ```javascript
+      function getUserSettings(user) {
+       return user.premium ? getSettings() : getBasicSettings();
+      }
+    ```
+    </div>
+
   </script>
-</section> -->
+</section>
 
 <section data-markdown>
   <script type="text/template">
@@ -51,7 +64,7 @@
 
     Tiene suficiente entidad como para sacarla a una función.
 
-    ```
+    ```javascript
     function calculaPaga(empleado) {
      switch(empleado.type) {
       case COMISIONISTA:
@@ -65,3 +78,42 @@
     ```
   </script>
 </section>
+
+<section data-markdown>
+  <script type="text/template">
+    ## Argumentos
+
+    No deberían tener más de 2 parámetros, 3 ya son muchos y más de 3 una excepción que se debe justificar.
+
+    <br>
+    <div class="fragment">
+
+    ```javascript
+      function makeCircle(x, y, radius) {...}
+
+      // vs
+
+      const point = { x: 3, y: 5 };
+      function makeCircle(point, radius) {...}
+    ```
+    </div>
+  </script>
+</section>
+
+<section data-markdown>
+    <script type="text/template">
+      ## Argumentos Booleanos
+
+      Son síntoma de que la función hace al menos 2 cosas (una si es true y otra si es false).
+
+      ```javascript
+        function setSwitch(on) {...}
+
+        // vs
+
+        function setOn() {...}
+        function setOff() {...}
+      ```
+    </script>
+  </section>
+

@@ -1,0 +1,69 @@
+<section>
+  <h2> - Comentarios - </h2>
+
+  <div class="fragment">
+    ¿Buenos o malos?
+  </div>
+</section>
+
+<section>
+  <ul>
+    <li>Solo están justificados cuando no somos capaces de expresarnos con el código.</li>
+    <br>
+    <li class="fragment"> En general, basta con escribir y encapsular todo en una función que se llame como lo que hay en el comentario.</li>
+  </ul>
+</section>
+
+<section data-markdown>
+    <script type="text/template">
+    Ejemplo
+
+    ```javascript
+      // Obtenemos la configuración del sistema
+      ...
+      // Iniciamos el sistema
+      ...
+      // Obtenemos la info del usuario
+      ...
+
+    ```
+
+    <div class="fragment">
+    vs
+
+    ```javascript
+      const config = getAppConfig();
+      ...
+      setup();
+      ...
+      const user = getUserDetails();
+    ```
+    </div>
+
+    </script>
+  </section>
+
+  <section data-markdown>
+    <script type="text/template">
+    ## Buenos
+
+    * Comentarios legales
+    * Comentarios informativos (por ejemplo, referenciando documentos normativos)
+    * Explicación de la intención, decisión tomada o advertencia
+    * Cuando utilizamos librerías de terceros, que no podemos modificar los nombres de funciones
+    * Comentarios TODO, aunque no deben ser excusa para dejar código incorrecto
+    * Comentarios en API públicas (Javadoc)
+
+    </script>
+  </section>
+
+  <section data-markdown>
+    <script type="text/template">
+    ## Malos
+
+    * Comentando código complicado -> reescribe el código
+    * Código comentado -> control de versiones
+    * Diario -> no tienes control de versiones
+
+    </script>
+  </section>
